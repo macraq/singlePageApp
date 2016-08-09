@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="Test">
+  <head>
+    <meta charset="utf-8" />
+    <title>single app Test</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.4.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js" data-semver="1.4.6"></script>
+    <script data-require="angular-route@*" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular-route.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <h3>Single App Test</h3>
+    <p>
+        layout
+    </p>
+    
+    <a href="#/home">Strona główna</a>
+    |
+    <a href="#/private">Dla zalogowanych</a>
+    |
+    <a href="#/login">Login</a>
+    
+    <section>
+        <ng-view></ng-view>
+    </section>
+    <!--templats-->
+    <script type="text/ng-template" id="login">
+        <h1>Login </h1>
+        <p>Strona logowania</p>
+        <p>
+            <a href="" ng-click="context.login()">zaloguj</a>
+        </p>
+        <p>
+            <a href="" ng-click="context.logout()">wyloguj</a>
+        </p>
+    </script>
+
+    <script type="text/ng-template" id="public">
+        <h1>Widok publiczny</h1>
+        <p>Widok dostępny dla wszystkich jakieś strony informacyjne, etc.</p>
+    </script>
+
+    <script type="text/ng-template" id="private">
+        <h1>Widok dostępny dla zalogowanych</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia arcu non lectus accumsan porttitor. Proin sapien nibh, consequat eu tortor sit amet, cursus pharetra metus. Suspendisse ac lorem sed nibh auctor malesuada. Fusce suscipit enim id libero volutpat tincidunt vel consequat lectus. Aenean rhoncus enim et scelerisque tincidunt. Maecenas tempus elit id nisi pulvinar pretium. Duis sed metus nec arcu posuere auctor ac placerat ex. Phasellus feugiat tortor ipsum, sit amet rhoncus enim gravida nec. Mauris sem mi, hendrerit eget augue id, volutpat pulvinar felis. Vivamus tempor purus quis congue rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla imperdiet nunc, id faucibus dui vehicula ac.</p>
+        <ul>
+            <li><a href="#/private/page/1">Sub page 1</a></li>
+            <li><a href="#/private/page/2">Sub page 2</a></li>
+            <li><a href="#/private/page/3">Sub page 3</a></li>
+            <li><a href="#/private/page/4">Sub page 4</a></li>
+            <li><a href="#/private/page/5">Sub page 5</a></li>
+        </ul>
+    </script>
+
+
+ <script type="text/ng-template" id="private_page">
+        <h1>Srtona {{pageId}}</h1>
+        <a href="#/private">&laquo; return</a>
+    </script>
+  </body>
+</html>

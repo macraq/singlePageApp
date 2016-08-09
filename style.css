@@ -1,0 +1,13 @@
+body {
+    font-family: Segoe UI;
+}
+
+section {
+    margin-top: 2em;
+    border: 1px solid #ccc;
+    padding: 0 2em 1em;
+}
+
+.important {
+    color: #e00;
+}
